@@ -1,158 +1,215 @@
-/* =========================================
-   BRASA BURGER — JAVASCRIPT
-   ========================================= */
+// ==========================================
+// BRASA BURGER - JAVASCRIPT
+// ==========================================
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================
-       ANO AUTOMÁTICO DO FOOTER
-       ========================================= */
+// ==========================================
+// ANO AUTOMÁTICO
+// ==========================================
 
-    const footerText = document.querySelector(".footer p");
+const year = document.getElementById("year");
 
-    if (footerText) {
-        footerText.textContent =
-            `© ${new Date().getFullYear()} Brasa Burger. Todos os direitos reservados.`;
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
+
+
+// ==========================================
+// HEADER AO ROLAR
+// ==========================================
+
+const header = document.getElementById("header");
+
+function updateHeader() {
+
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
     }
 
+}
 
-    /* =========================================
-       HEADER AO ROLAR A PÁGINA
-       ========================================= */
+window.addEventListener("scroll", updateHeader);
 
-    const header = document.querySelector(".header");
+updateHeader();
 
-    function updateHeader() {
 
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
+// ==========================================
+// MENU MOBILE
+// ==========================================
+
+const menuToggle = document.getElementById("menuToggle");
+const menu = document.querySelector(".menu");
+
+if (menuToggle && menu) {
+
+    menuToggle.addEventListener("click", () => {
+
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+            menuToggle.textContent = "✕";
         } else {
-            header.classList.remove("scrolled");
+            menuToggle.textContent = "☰";
         }
 
-    }
-
-    window.addEventListener("scroll", updateHeader);
-
-    updateHeader();
+    });
 
 
-    /* =========================================
-       SCROLL SUAVE
-       ========================================= */
+    // Fecha o menu quando clicar em algum link
 
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    const menuLinks = menu.querySelectorAll("a");
 
-    internalLinks.forEach(link => {
+    menuLinks.forEach(link => {
 
-        link.addEventListener("click", event => {
+        link.addEventListener("click", () => {
 
-            const targetId = link.getAttribute("href");
+            menu.classList.remove("active");
 
-            if (targetId === "#") {
-                return;
-            }
-
-            const target = document.querySelector(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            menuToggle.textContent = "☰";
 
         });
 
     });
 
+}
 
-    /* =========================================
-       ANIMAÇÕES AO ENTRAR NA TELA
-       ========================================= */
 
-    const animatedElements = document.querySelectorAll(
-        ".feature, .burger-card, .about-image, .about-content, .contact-item"
-    );
+// ==========================================
+// SCROLL SUAVE
+// ==========================================
 
-    const observer = new IntersectionObserver(
-        entries => {
+const internalLinks = document.querySelectorAll(
+    'a[href^="#"]'
+);
 
-            entries.forEach(entry => {
+internalLinks.forEach(link => {
 
-                if (entry.isIntersecting) {
+    link.addEventListener("click", function(event) {
 
-                    entry.target.classList.add("show");
+        const targetId = this.getAttribute("href");
 
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
+        if (!targetId || targetId === "#") {
+            return;
         }
-    );
 
+        const target = document.querySelector(targetId);
 
-    animatedElements.forEach(element => {
+        if (!target) {
+            return;
+        }
 
-        element.classList.add("reveal");
+        event.preventDefault();
 
-        observer.observe(element);
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
     });
 
+});
 
-    /* =========================================
-       EFEITO PARALLAX LEVE NO HERO
-       ========================================= */
 
-    const hero = document.querySelector(".hero");
+// ==========================================
+// ANIMAÇÕES AO ENTRAR NA TELA
+// ==========================================
 
-    if (hero && window.innerWidth > 768) {
+const revealElements = document.querySelectorAll(".reveal");
 
-        window.addEventListener("scroll", () => {
+const observer = new IntersectionObserver(
+    (entries) => {
 
-            const scrollPosition = window.scrollY;
+        entries.forEach(entry => {
 
-            if (scrollPosition < 800) {
+            if (entry.isIntersecting) {
 
-                hero.style.backgroundPosition =
-                    `center calc(50% + ${scrollPosition * 0.15}px)`;
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
 
             }
 
         });
 
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+
+revealElements.forEach(element => {
+    observer.observe(element);
+});
+
+
+// ==========================================
+// EFEITO NOS BOTÕES
+// ==========================================
+
+const buttons = document.querySelectorAll(".button");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        button.classList.add("clicked");
+
+        setTimeout(() => {
+            button.classList.remove("clicked");
+        }, 180);
+
+    });
+
+});
+
+
+// ==========================================
+// PARALLAX DO HERO
+// ==========================================
+
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+
+    if (!hero) return;
+
+    // Desativa o efeito em telas pequenas
+    if (window.innerWidth <= 900) {
+        hero.style.backgroundPosition = "center";
+        return;
     }
 
+    const scrollPosition = window.scrollY;
 
-    /* =========================================
-       BOTÕES DE PEDIDO
-       ========================================= */
+    hero.style.backgroundPosition =
+        `center calc(50% + ${scrollPosition * 0.12}px)`;
 
-    const orderButtons = document.querySelectorAll(
-        'a[href*="wa.me"]'
-    );
+});
 
-    orderButtons.forEach(button => {
 
-        button.addEventListener("click", () => {
+// ==========================================
+// FALLBACK PARA IMAGENS
+// Se alguma imagem externa falhar,
+// mantém um fundo escuro em vez de
+// deixar um espaço quebrado.
+// ==========================================
 
-            button.classList.add("clicked");
+const images = document.querySelectorAll("img");
 
-            setTimeout(() => {
-                button.classList.remove("clicked");
-            }, 400);
+images.forEach(image => {
 
-        });
+    image.addEventListener("error", () => {
+
+        image.style.display = "none";
+
+        if (image.parentElement) {
+            image.parentElement.classList.add("image-error");
+        }
 
     });
 
