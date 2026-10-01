@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Brasa Burger | São José do Rio Preto</title>
+    <title>Brasa Burger | Hambúrguer Artesanal</title>
 
-    <meta name="description" content="Brasa Burger — hambúrguer artesanal em São José do Rio Preto. Peça seu burger pelo WhatsApp.">
+    <meta
+        name="description"
+        content="Brasa Burger — hambúrguer artesanal em São José do Rio Preto. Confira nosso cardápio e faça seu pedido."
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,32 +25,41 @@
 <body>
 
     <!-- HEADER -->
+    <header class="header" id="header">
 
-    <header class="header">
         <div class="container nav">
 
-            <a href="#" class="logo">
-                <span>BRASA</span>
-                <strong>BURGER</strong>
+            <a href="#inicio" class="logo">
+                BRASA<span>BURGER</span>
             </a>
 
             <nav class="menu">
+
                 <a href="#inicio">Início</a>
                 <a href="#cardapio">Cardápio</a>
-                <a href="#sobre">Sobre</a>
+                <a href="#sobre">Sobre nós</a>
                 <a href="#contato">Contato</a>
+
+                <a
+                    href="https://wa.me/5517999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido."
+                    target="_blank"
+                    class="nav-button"
+                >
+                    Pedir agora
+                </a>
+
             </nav>
 
-            <a href="https://wa.me/5517999999999" class="nav-button" target="_blank">
-                Pedir agora
-            </a>
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
 
         </div>
+
     </header>
 
 
     <!-- HERO -->
-
     <main>
 
         <section class="hero" id="inicio">
@@ -53,50 +68,51 @@
 
             <div class="container hero-content">
 
-                <div class="hero-text">
+                <span class="hero-tag">
+                    HAMBÚRGUER ARTESANAL
+                </span>
 
-                    <span class="eyebrow">
-                        HAMBÚRGUER ARTESANAL
-                    </span>
+                <h1>
+                    Seu hambúrguer.<br>
+                    <span>Do seu jeito.</span>
+                </h1>
 
-                    <h1>
-                        O sabor que
-                        <span>fica na memória.</span>
-                    </h1>
+                <p>
+                    Carne suculenta, ingredientes selecionados
+                    e muito sabor em cada mordida.
+                </p>
 
-                    <p>
-                        Hambúrguer artesanal preparado na brasa,
-                        ingredientes selecionados e aquele sabor
-                        que dá vontade de pedir de novo.
-                    </p>
+                <div class="hero-buttons">
 
-                    <div class="hero-buttons">
+                    <a
+                        href="https://wa.me/5517999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido."
+                        target="_blank"
+                        class="button button-primary"
+                    >
+                        Fazer pedido
+                    </a>
 
-                        <a href="#cardapio" class="button primary">
-                            Ver cardápio
-                        </a>
+                    <a href="#cardapio" class="button button-secondary">
+                        Ver cardápio
+                    </a>
 
-                        <a href="https://wa.me/5517999999999" class="button secondary" target="_blank">
-                            Pedir pelo WhatsApp
-                        </a>
+                </div>
 
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Artesanal</span>
                     </div>
 
-                    <div class="hero-info">
-                        <div>
-                            <strong>★ 4.9</strong>
-                            <span>Avaliação dos clientes</span>
-                        </div>
+                    <div>
+                        <strong>4.9★</strong>
+                        <span>Avaliação</span>
+                    </div>
 
-                        <div>
-                            <strong>100%</strong>
-                            <span>Artesanal</span>
-                        </div>
-
-                        <div>
-                            <strong>🔥</strong>
-                            <span>Feito na brasa</span>
-                        </div>
+                    <div>
+                        <strong>30min</strong>
+                        <span>Entrega média</span>
                     </div>
 
                 </div>
@@ -107,34 +123,50 @@
 
 
         <!-- DIFERENCIAIS -->
-
         <section class="features">
 
             <div class="container features-grid">
 
-                <div class="feature">
+                <article class="feature-card reveal">
+
                     <div class="feature-icon">🔥</div>
-                    <div>
-                        <h3>Feito na brasa</h3>
-                        <p>Carne preparada na hora.</p>
-                    </div>
-                </div>
 
-                <div class="feature">
+                    <h3>Na brasa</h3>
+
+                    <p>
+                        Carne preparada na brasa para garantir
+                        aquele sabor defumado especial.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card reveal">
+
                     <div class="feature-icon">🥩</div>
-                    <div>
-                        <h3>Ingredientes selecionados</h3>
-                        <p>Qualidade em cada detalhe.</p>
-                    </div>
-                </div>
 
-                <div class="feature">
+                    <h3>Carne selecionada</h3>
+
+                    <p>
+                        Ingredientes escolhidos para entregar
+                        qualidade em cada hambúrguer.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card reveal">
+
                     <div class="feature-icon">🍔</div>
-                    <div>
-                        <h3>Receita artesanal</h3>
-                        <p>Combinações feitas para você.</p>
-                    </div>
-                </div>
+
+                    <h3>Feito na hora</h3>
+
+                    <p>
+                        Seu pedido é preparado na hora,
+                        garantindo muito mais sabor.
+                    </p>
+
+                </article>
 
             </div>
 
@@ -142,22 +174,21 @@
 
 
         <!-- CARDÁPIO -->
-
         <section class="menu-section" id="cardapio">
 
             <div class="container">
 
-                <div class="section-heading">
+                <div class="section-heading reveal">
 
-                    <span class="eyebrow">NOSSO CARDÁPIO</span>
+                    <span>O NOSSO CARDÁPIO</span>
 
                     <h2>
-                        Escolha seu
-                        <span>favorito.</span>
+                        Escolha seu <strong>favorito</strong>
                     </h2>
 
                     <p>
-                        Prepare-se para conhecer seu novo hambúrguer favorito.
+                        Hambúrgueres artesanais preparados
+                        especialmente para você.
                     </p>
 
                 </div>
@@ -165,36 +196,44 @@
 
                 <div class="burgers-grid">
 
-
                     <!-- BURGER 1 -->
-
-                    <article class="burger-card">
+                    <article class="burger-card reveal">
 
                         <div class="burger-image">
+
                             <img
-                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
-                                alt="Brasa Classic Burger"
+                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=90"
+                                alt="Hambúrguer artesanal"
                             >
 
-                            <span class="tag">MAIS PEDIDO</span>
+                            <span class="popular">
+                                MAIS PEDIDO
+                            </span>
+
                         </div>
 
-                        <div class="burger-info">
+                        <div class="burger-content">
 
-                            <div class="burger-title">
-                                <h3>Brasa Classic</h3>
-                                <strong>R$ 29,90</strong>
-                            </div>
+                            <h3>Brasa Classic</h3>
 
                             <p>
-                                Pão brioche, burger artesanal 160g,
-                                queijo cheddar, cebola caramelizada
+                                Pão brioche, hambúrguer artesanal,
+                                queijo cheddar, alface, tomate
                                 e molho especial da casa.
                             </p>
 
-                            <a href="https://wa.me/5517999999999?text=Olá! Quero pedir o Brasa Classic." target="_blank">
-                                Pedir agora →
-                            </a>
+                            <div class="burger-bottom">
+
+                                <strong>R$ 29,90</strong>
+
+                                <a
+                                    href="https://wa.me/5517999999999?text=Olá!%20Quero%20pedir%20o%20Brasa%20Classic."
+                                    target="_blank"
+                                >
+                                    Pedir →
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -202,32 +241,39 @@
 
 
                     <!-- BURGER 2 -->
-
-                    <article class="burger-card">
+                    <article class="burger-card reveal">
 
                         <div class="burger-image">
+
                             <img
-                                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85"
-                                alt="Brasa Bacon Burger"
+                                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=90"
+                                alt="Cheeseburger artesanal"
                             >
+
                         </div>
 
-                        <div class="burger-info">
+                        <div class="burger-content">
 
-                            <div class="burger-title">
-                                <h3>Brasa Bacon</h3>
-                                <strong>R$ 34,90</strong>
-                            </div>
+                            <h3>Double Brasa</h3>
 
                             <p>
-                                Pão brioche, burger artesanal 160g,
-                                cheddar cremoso, bacon crocante
-                                e molho barbecue.
+                                Dois hambúrgueres artesanais,
+                                cheddar cremoso, cebola caramelizada
+                                e molho especial.
                             </p>
 
-                            <a href="https://wa.me/5517999999999?text=Olá! Quero pedir o Brasa Bacon." target="_blank">
-                                Pedir agora →
-                            </a>
+                            <div class="burger-bottom">
+
+                                <strong>R$ 36,90</strong>
+
+                                <a
+                                    href="https://wa.me/5517999999999?text=Olá!%20Quero%20pedir%20o%20Double%20Brasa."
+                                    target="_blank"
+                                >
+                                    Pedir →
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -235,36 +281,56 @@
 
 
                     <!-- BURGER 3 -->
-
-                    <article class="burger-card">
+                    <article class="burger-card reveal">
 
                         <div class="burger-image">
+
                             <img
-                                src="https://images.unsplash.com/photo-157 burger?auto=format&fit=crop&w=900&q=85"
-                                alt="Brasa Duplo Burger"
+                                src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=1000&q=90"
+                                alt="Hambúrguer com queijo"
                             >
+
                         </div>
 
-                        <div class="burger-info">
+                        <div class="burger-content">
 
-                            <div class="burger-title">
-                                <h3>Brasa Duplo</h3>
-                                <strong>R$ 39,90</strong>
-                            </div>
+                            <h3>Brasa Bacon</h3>
 
                             <p>
-                                Dois burgers artesanais, cheddar,
-                                cebola crispy, molho especial
-                                e pão brioche.
+                                Hambúrguer artesanal, cheddar,
+                                bacon crocante, cebola roxa
+                                e molho barbecue.
                             </p>
 
-                            <a href="https://wa.me/5517999999999?text=Olá! Quero pedir o Brasa Duplo." target="_blank">
-                                Pedir agora →
-                            </a>
+                            <div class="burger-bottom">
+
+                                <strong>R$ 34,90</strong>
+
+                                <a
+                                    href="https://wa.me/5517999999999?text=Olá!%20Quero%20pedir%20o%20Brasa%20Bacon."
+                                    target="_blank"
+                                >
+                                    Pedir →
+                                </a>
+
+                            </div>
 
                         </div>
 
                     </article>
+
+                </div>
+
+
+                <div class="menu-more reveal">
+
+                    <a
+                        href="https://wa.me/5517999999999?text=Olá!%20Gostaria%20de%20ver%20o%20cardápio%20completo."
+                        target="_blank"
+                        class="button button-primary"
+                    >
+                        Ver cardápio completo
+                    </a>
 
                 </div>
 
@@ -274,48 +340,60 @@
 
 
         <!-- SOBRE -->
-
         <section class="about" id="sobre">
 
             <div class="container about-grid">
 
-                <div class="about-image">
+                <div class="about-image reveal">
 
                     <img
-                        src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=1000&q=85"
+                        src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1200&q=90"
                         alt="Hambúrguer artesanal Brasa Burger"
                     >
 
                     <div class="experience">
+
                         <strong>5+</strong>
-                        <span>anos criando<br>hambúrgueres</span>
+
+                        <span>
+                            anos fazendo<br>
+                            hambúrguer
+                        </span>
+
                     </div>
 
                 </div>
 
 
-                <div class="about-content">
+                <div class="about-content reveal">
 
-                    <span class="eyebrow">SOBRE A BRASA</span>
+                    <span class="section-label">
+                        SOBRE A BRASA
+                    </span>
 
                     <h2>
-                        Mais que um burger.
-                        <span>Uma experiência.</span>
+                        Mais que um hambúrguer.<br>
+                        <strong>Uma experiência.</strong>
                     </h2>
 
                     <p>
-                        A Brasa Burger nasceu com uma missão simples:
-                        transformar ingredientes de qualidade em
-                        hambúrgueres inesquecíveis.
+                        A Brasa Burger nasceu da paixão por bons
+                        hambúrgueres e da vontade de transformar
+                        ingredientes simples em experiências
+                        inesquecíveis.
                     </p>
 
                     <p>
-                        Nossa carne é preparada artesanalmente,
-                        nosso pão é escolhido a dedo e cada molho
-                        tem uma receita especial.
+                        Tudo é preparado com cuidado, desde a
+                        escolha da carne até o último detalhe
+                        do seu pedido.
                     </p>
 
-                    <a href="#contato" class="text-link">
+                    <a
+                        href="https://wa.me/5517999999999?text=Olá!%20Quero%20conhecer%20a%20Brasa%20Burger."
+                        target="_blank"
+                        class="text-link"
+                    >
                         Conheça a Brasa →
                     </a>
 
@@ -327,24 +405,29 @@
 
 
         <!-- CTA -->
-
         <section class="cta">
 
-            <div class="container cta-content">
+            <div class="container cta-content reveal">
 
-                <span class="eyebrow">BATEU A FOME?</span>
+                <span>
+                    BATEU A FOME?
+                </span>
 
                 <h2>
-                    Seu próximo burger
-                    <span>está aqui.</span>
+                    Então bora de <strong>Brasa!</strong>
                 </h2>
 
                 <p>
-                    Faça seu pedido pelo WhatsApp e aproveite.
+                    Faça seu pedido agora e receba
+                    seu hambúrguer favorito.
                 </p>
 
-                <a href="https://wa.me/5517999999999" class="button primary" target="_blank">
-                    Fazer meu pedido
+                <a
+                    href="https://wa.me/5517999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido."
+                    target="_blank"
+                    class="button button-light"
+                >
+                    Pedir pelo WhatsApp
                 </a>
 
             </div>
@@ -353,53 +436,68 @@
 
 
         <!-- CONTATO -->
-
         <section class="contact" id="contato">
 
-            <div class="container contact-grid">
+            <div class="container">
 
-                <div>
+                <div class="section-heading reveal">
 
-                    <span class="eyebrow">ONDE ESTAMOS</span>
+                    <span>FALE COM A GENTE</span>
 
                     <h2>
-                        Venha conhecer
-                        <span>a Brasa.</span>
+                        Onde <strong>estamos</strong>
                     </h2>
-
-                    <p>
-                        Estamos esperando você em São José do Rio Preto.
-                    </p>
 
                 </div>
 
 
-                <div class="contact-details">
+                <div class="contact-grid">
 
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <div>
-                            <strong>Endereço</strong>
-                            <p>Av. Alberto Andaló, 1200<br>
-                            São José do Rio Preto - SP</p>
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            📍
                         </div>
+
+                        <h3>Endereço</h3>
+
+                        <p>
+                            Av. Alberto Andaló, 1200<br>
+                            São José do Rio Preto - SP
+                        </p>
+
                     </div>
 
-                    <div class="contact-item">
-                        <span>🕐</span>
-                        <div>
-                            <strong>Horário</strong>
-                            <p>Terça a Domingo<br>
-                            18:00 às 23:30</p>
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            🕐
                         </div>
+
+                        <h3>Horário</h3>
+
+                        <p>
+                            Terça a Domingo<br>
+                            18:00 às 23:30
+                        </p>
+
                     </div>
 
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <div>
-                            <strong>WhatsApp</strong>
-                            <p>(17) 9999999</p>
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            📱
                         </div>
+
+                        <h3>Contato</h3>
+
+                        <p>
+                            (17) 99999-9999<br>
+                            @brasaburger
+                        </p>
+
                     </div>
 
                 </div>
@@ -412,23 +510,52 @@
 
 
     <!-- FOOTER -->
-
     <footer class="footer">
 
         <div class="container footer-content">
 
-            <div class="logo">
-                <span>BRASA</span>
-                <strong>BURGER</strong>
+            <div>
+
+                <a href="#inicio" class="logo">
+                    BRASA<span>BURGER</span>
+                </a>
+
+                <p>
+                    Hambúrguer artesanal feito na brasa.
+                </p>
+
             </div>
 
-            <p>
-                © 2026 Brasa Burger. Todos os direitos reservados.
-            </p>
 
-            <a href="https://instagram.com/" target="_blank">
-                Instagram →
-            </a>
+            <div class="footer-social">
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="https://wa.me/5517999999999"
+                    target="_blank"
+                    aria-label="WhatsApp"
+                >
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container copyright">
+
+            <p>
+                © <span id="year"></span> Brasa Burger.
+                Todos os direitos reservados.
+            </p>
 
         </div>
 
@@ -438,4 +565,4 @@
     <script src="script.js"></script>
 
 </body>
-                              </html>
+                    </html>
